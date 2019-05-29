@@ -13,9 +13,9 @@ node() {
             sh "pwd"
             sh "pwd"
             //sh "rm Wilson-Test-EC2KeyPair.pem"
-            sh "cp \$mySecretKey /var/lib/jenkins/workspace/test-wilson-aws-training-pipeline"
+            sh "cp \$mySecretKey /var/lib/jenkins/workspace/wilson-test-EC2-audit-ansible"
             sh "ls"
-            sh "ansible-playbook playbook-wilson-test-ansible.yaml -i inventory.txt"
+            sh "playbook-ansible-scripts.yaml.yaml -i inventory.txt"
         }
             
           
