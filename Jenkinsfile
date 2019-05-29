@@ -15,7 +15,7 @@ node() {
             //sh "rm Wilson-Test-EC2KeyPair.pem"
             sh "cp \$mySecretKey /home/jenkins/workspace/wilson-test-EC2-audit-ansible"
             sh "ls"
-            sh "playbook-ansible-scripts.yaml.yaml -i inventory.txt"
+            sh "playbook-ansible-scripts.yaml -i inventory.txt"
         }
             
           
