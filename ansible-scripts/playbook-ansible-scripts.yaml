@@ -1,0 +1,14 @@
+-
+  name: running docker image on EC2s
+  hosts: all
+  become: yes
+  become_method: sudo
+  tasks:
+
+
+
+    - name: do an ls
+      shell: ls
+
+
+
