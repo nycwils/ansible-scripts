@@ -1,5 +1,5 @@
 -
-  name: running docker image on EC2s
+  name: ansible script to audit EC2s
   hosts: all
   become: yes
   become_method: sudo
