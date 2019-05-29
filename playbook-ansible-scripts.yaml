@@ -1,14 +1,19 @@
 -
-  name: ansible script to audit EC2s
+  name: running docker image on EC2s
   hosts: all
   become: yes
   become_method: sudo
   tasks:
+#    - name: Install pip
+#      apt: name=python-pip state=present
+
+#    - name: install docker-py
+#      pip: name=docker-py
 
 
-
-    - name: do an ls
-      shell: ls
-
-
+    - name: configure / Update yum packages
+      yum:
+        name: '*'
+        state: latest
+        update_cache: yes
 
