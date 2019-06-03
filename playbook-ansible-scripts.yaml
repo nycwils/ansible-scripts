@@ -13,4 +13,10 @@
 
     
     - name: command to check the free space that exists on the machine
-      shell: df -h      
+      shell: df -h
+
+    - command: cat /etc/*-release
+      register: command_output
+
+    - command: echo "this is a amazon linux"
+      when: command_output.stdout.find('Amazon Linux AMI') != -1
