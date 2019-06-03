@@ -11,6 +11,7 @@
     - name: command to check with OS this EC2 is using
       #command: echo "testing234"
       command: cat /etc/os-release
+      register: command_output
 
     
     #- name: command to check the free space that exists on the machine
@@ -20,5 +21,5 @@
     #   command: cat /etc/*-release
     #   register: command_output
 
-    # - command: echo "this is a amazon linux"
-    #   when: command_output.stdout.find('Amazon Linux AMI') != -1
+    - command: echo "this is a amazon linux"
+      when: command_output.stdout.find('Amazon Linux AMI') != -1
