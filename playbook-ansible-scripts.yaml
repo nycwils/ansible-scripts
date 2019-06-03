@@ -9,14 +9,15 @@
       shell: ls
       
     - name: command to check with OS this EC2 is using
-      shell: cat /etc/*-release
+      command: cat /etc/*-release
 
     
     - name: command to check the free space that exists on the machine
       shell: df -h
 
-    - shell: cat /etc/*-release
-      register: command_output
+    # - name: find out OS and info and put it into register
+    #   command: cat /etc/*-release
+    #   register: command_output
 
-    - command: echo "this is a amazon linux"
-      when: command_output.stdout.find('Amazon Linux AMI') != -1
+    # - command: echo "this is a amazon linux"
+    #   when: command_output.stdout.find('Amazon Linux AMI') != -1
