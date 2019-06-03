@@ -3,6 +3,10 @@
   hosts: all
   become: yes
   become_method: sudo
+  vars:
+        Amazon: "Amazon Linux AMI"
+        CentOS: "centos"
+        Debian: "debian"
   tasks:
 
     - name: see the stuffs inside directory
@@ -12,19 +16,12 @@
       #command: echo "testing234"
       command: cat /etc/os-release
       register: command_output
-      vars:
-        Amazon: "Amazon Linux AMI"
-        CentOS: "centos"
-        Debian: "debian"
-      tasks:
 
-        - 
-          command: echo "This is a amazon linux"
-          when: command_output.stdout.find(Amazon) != -1
+    - command: echo "This is a amazon linux"
+      when: command_output.stdout.find(Amazon) != -1
 
-        - 
-          command: echo "This is a Debian"
-          when: command_output.stdout.find(Debian) != -1
+    - command: echo "This is a Debian"
+      when: command_output.stdout.find(Debian) != -1
 
       #- name: command to check the free space that exists on the machine
     #  shell: df -h
