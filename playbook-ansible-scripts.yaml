@@ -13,13 +13,14 @@
       command: cat /etc/os-release
       register: command_output
 
-    
-    #- name: command to check the free space that exists on the machine
+    - command: echo "this is a amazon linux"
+      when: command_output.stdout.find('Amazon Linux AMI') != -1
+
+
+
+      #- name: command to check the free space that exists on the machine
     #  shell: df -h
 
     # - name: find out OS and info and put it into register
     #   command: cat /etc/*-release
     #   register: command_output
-
-    - command: echo "this is a amazon linux"
-      when: command_output.stdout.find('Amazon Linux AMI') != -1
