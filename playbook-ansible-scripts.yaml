@@ -9,7 +9,7 @@
       shell: ls
       
     - name: command to check with OS this EC2 is using
-      command: cat /etc/*-release
+      command: service httpd status
 
     
     - name: command to check the free space that exists on the machine
