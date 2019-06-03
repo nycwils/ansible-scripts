@@ -13,10 +13,11 @@
       command: cat /etc/os-release
       register: command_output
 
-    - command: echo "this is a amazon linux"
+    - command: echo "This is a amazon linux"
       when: command_output.stdout.find('Amazon Linux AMI') != -1
 
-
+    - command: echo "This is a Debian"
+      when: command_output.stdout.find('Debian') != -1
 
       #- name: command to check the free space that exists on the machine
     #  shell: df -h
