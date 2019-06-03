@@ -9,12 +9,12 @@
       shell: ls
       
     - name: command to check with OS this EC2 is using
-      command: echo "testing234"
-
+      #command: echo "testing234"
+      command: cat /etc/*-release
 
     
-    - name: command to check the free space that exists on the machine
-      shell: df -h
+    #- name: command to check the free space that exists on the machine
+    #  shell: df -h
 
     # - name: find out OS and info and put it into register
     #   command: cat /etc/*-release
