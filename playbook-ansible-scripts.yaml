@@ -8,4 +8,9 @@
     - name: see the stuffs inside directory
       shell: ls
       
+    - name: command to check with OS this EC2 is using
+      shell: cat /etc/*-release
 
+    
+    - name: command to check the free space that exists on the machine
+      shell: df -h      
