@@ -10,7 +10,7 @@
       
     - name: command to check with OS this EC2 is using
       #command: echo "testing234"
-      command: cat /etc/*-release
+      command: cat /etc/os-release
 
     
     #- name: command to check the free space that exists on the machine
