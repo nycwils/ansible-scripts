@@ -12,12 +12,17 @@
       #command: echo "testing234"
       command: cat /etc/os-release
       register: command_output
+      vars:
+        Amazon: "Amazon Linux AMI"
+        CentOS: "centos"
+        Debian: "debian"
+      tasks:
 
     - command: echo "This is a amazon linux"
-      when: command_output.stdout.find('Amazon Linux AMI') != -1
+      when: command_output.stdout.find(Amazon) != -1
 
     - command: echo "This is a Debian"
-      when: command_output.stdout.find('debian') != -1
+      when: command_output.stdout.find(Debian) != -1
 
       #- name: command to check the free space that exists on the machine
     #  shell: df -h
@@ -25,3 +30,12 @@
     # - name: find out OS and info and put it into register
     #   command: cat /etc/*-release
     #   register: command_output
+
+
+      #  - name: command to check with OS this EC2 is using
+      # #command: echo "testing234"
+      # command: cat /etc/os-release
+      # register: command_output
+      # vars:
+      #   cmd_output
+      # tasks:
