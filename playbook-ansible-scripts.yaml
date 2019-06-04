@@ -21,10 +21,6 @@
       with_items:
       - echo "this is an Amazon"
       - yum list installed
-      - mail:
-          to: test <wilson.lam@nyu.edu>
-          subject: this is a test
-          body: 'blah blah'
       when: command_output.stdout.find(Amazon) != -1
 
     - command: "{{ item }}"
