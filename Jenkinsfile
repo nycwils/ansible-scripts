@@ -19,7 +19,7 @@ node('master') {
             sh "cp \$mySecretKey /var/lib/jenkins/workspace/wilson-test-EC2-audit-ansible"
             sh "ls"
             sh "chmod 0400 Wilson-Test-EC2KeyPair.pem"
-            sh "ansible-playbook playbook-ansible-scripts.yaml -i ansible_ssh_extra_args='-o StrictHostKeyChecking=no' inventory.txt"
+            sh "ansible-playbook playbook-ansible-scripts.yaml -i inventory.txt"
         }
             
           
