@@ -4,7 +4,7 @@
   become: yes
   become_method: sudo
   vars:
-        Amazon: "amzn"
+        Amazon: "Amazon Linux AMI"
         Rhel: "rhel"
         Debian: "debian"
   tasks:
