@@ -16,7 +16,7 @@ node('master') {
             sh "pwd"
             sh "ls"
             //sh "rm Wilson-Test-EC2KeyPair.pem"
-            sh "chmod -R /var/lib/jenkins/workspace/wilson-test-EC2-audit-ansible"
+            sh "chmod -R 777 /var/lib/jenkins/workspace/wilson-test-EC2-audit-ansible"
             sh "cp \$mySecretKey /var/lib/jenkins/workspace/wilson-test-EC2-audit-ansible"
             sh "ls"
             sh "chmod 0400 Wilson-Test-EC2KeyPair.pem"
