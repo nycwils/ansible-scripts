@@ -17,7 +17,10 @@
       command: cat /etc/os-release
       register: command_output
 
-    - command: echo "This is a amazon linux"
+    - command: "{{ item }}"
+      with_items:
+      - echo "hi"
+      - yum list installed
       when: command_output.stdout.find(Amazon) != -1
 
     - command: apt list --installed
