@@ -20,7 +20,7 @@
     - command: echo "This is a amazon linux"
       when: command_output.stdout.find(Amazon) != -1
 
-    - command: echo "This is a Debian"
+    - command: apt list --installed
       when: command_output.stdout.find(Debian) != -1
 
     - command: echo "This is a CentOS"
