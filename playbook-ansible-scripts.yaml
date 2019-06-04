@@ -24,7 +24,7 @@
       when: command_output.stdout.find(Debian) != -1
 
     - command: echo "This is a CentOS"
-      when: command_output.stdout.find(centos) != -1
+      when: command_output.stdout.find(Rhel) != -1
 
       #- name: command to check the free space that exists on the machine
     #  shell: df -h
