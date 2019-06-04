@@ -16,7 +16,7 @@ node('master') {
             sh "pwd"
             sh "ls"
             //sh "rm Wilson-Test-EC2KeyPair.pem"
-            sh "sudo cp \$mySecretKey /var/lib/jenkins/workspace/wilson-test-EC2-audit-ansible"
+            sh "cp sudo \$mySecretKey /var/lib/jenkins/workspace/wilson-test-EC2-audit-ansible"
             sh "ls"
             sh "chmod 0400 Wilson-Test-EC2KeyPair.pem"
             sh "ansible-playbook playbook-ansible-scripts.yaml -i inventory.txt"
