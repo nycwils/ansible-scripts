@@ -20,7 +20,7 @@
     - command: "{{ item }}"
       with_items:
       - echo "this is an Amazon"
-      - yume list installed
+      - yum list installed
       when: command_output.stdout.find(Amazon) != -1
 
     - command: "{{ item }}"
