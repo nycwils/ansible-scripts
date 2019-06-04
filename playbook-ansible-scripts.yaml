@@ -4,8 +4,8 @@
   become: yes
   become_method: sudo
   vars:
-        Amazon: "Amazon Linux AMI"
-        CentOS: "centos"
+        Amazon: "amzn"
+        Rhel: "rhel"
         Debian: "debian"
   tasks:
 
@@ -22,6 +22,9 @@
 
     - command: echo "This is a Debian"
       when: command_output.stdout.find(Debian) != -1
+
+    - command: echo "This is a CentOS"
+      when: command_output.stdout.find(centos) != -1
 
       #- name: command to check the free space that exists on the machine
     #  shell: df -h
